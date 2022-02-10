@@ -1,5 +1,4 @@
 
-
 function computerPlay(randNum){
     if (randNum === 1) {
         return "rock";
@@ -47,4 +46,4 @@ function playGame(){
     }
 }
 
-console.log(playGame())
+/*console.log(playGame())*/
