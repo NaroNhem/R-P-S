@@ -60,3 +60,11 @@ h1 {
     flex-grow: .1;
 
 }
+
+#paper {
+    background-image: 🖐;
+    background-size: cover;
+    width: 300px;
+    height: 200px;
+    font-size: 2rem;;
+}
