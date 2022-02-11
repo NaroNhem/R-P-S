@@ -21,8 +21,6 @@ function winner(userPoints, opPoints){
         userScore = 0;
         opScore = 0;
         return "You Lose."
-    } else{
-        return 0;
     }
 }
 
@@ -77,9 +75,16 @@ function playGame(){
     result.textContent = x;
     results.appendChild(result);
 
-    console.log(winner(userScore, opScore));
-    
+    if (userScore === 5){
+        userScore = 0;
+        opScore = 0;
+        result.textContent = "You won!";
+    } else if(opScore === 5) {
+        userScore = 0;
+        opScore = 0;
+        result.textContent = "You lost.";
     }
+}
 
 /*console.log(playGame())*/
 
