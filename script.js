@@ -12,33 +12,47 @@ function computerPlay(randNum){
 userScore = 0;
 opScore = 0;
 
+function winner(userPoints, opPoints){
+    if (userPoints === 5){
+        userScore = 0;
+        opScore = 0;
+        return "You Won!";
+    } else if(opPoints === 5) {
+        userScore = 0;
+        opScore = 0;
+        return "You Lose."
+    } else{
+        return 0;
+    }
+}
+
 
 function playRound(computerSelection, userSelection) {
     if (computerSelection === userSelection){
-        return "Tie"
+        return "You and your opponent chose the same thing."
     }else if (computerSelection === "rock") {
         if (userSelection === "paper") {
             userScore +=1;
-            return "You win";
+            return "Your opponent chose rock. You win.";
         } else if (userSelection === "scissor") {
             opScore += 1;
-            return "You lose";
+            return "Your opponent chose rock. You lose";
         }
     } else if (computerSelection === "paper") {
         if (userSelection === "scissor") {
             userScore +=1;
-            return "You win";
+            return "Your opponent chose paper. You win.";
         } else if (userSelection === "rock") {
             opScore += 1;
-            return "You lose";
+            return "Your opponent chose paper. You lose.";
         }
     } else if (computerSelection === "scissor") {
         if (userSelection === "rock") {
             userScore +=1;
-            return "You win";
+            return "Your opponent chose scissor. You win.";
         } else if (userSelection ==="paper") {
             opScore += 1;
-            return "You Lose";
+            return "Your opponent chose scissor. You lose.";
         }
     }
 }
@@ -47,7 +61,7 @@ function playRound(computerSelection, userSelection) {
 function playGame(){
     let randomNumber = Math.floor(Math.random()*3) + 1;
     let compChoice = computerPlay(randomNumber);
-    console.log(playRound(compChoice, userChoice))
+    let x = playRound(compChoice, userChoice);
     const scoreNum = document.querySelector('.scoreNum');
 
     const userNum = document.getElementById("userNum");
@@ -56,7 +70,15 @@ function playGame(){
 
     const opNum = document.getElementById('opNum');
     opNum.textContent = opScore;
-    scoreNum.appendChild(opNum);        
+    scoreNum.appendChild(opNum);
+
+    const results = document.querySelector('.results');
+    const result = document.getElementById("resultDisplay");
+    result.textContent = x;
+    results.appendChild(result);
+
+    console.log(winner(userScore, opScore));
+    
     }
 
 /*console.log(playGame())*/
@@ -78,3 +100,4 @@ scissor.addEventListener('click', () => {
     userChoice = "scissor";
     playGame();
 });
+

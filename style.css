@@ -62,9 +62,47 @@ h1 {
 }
 
 #paper {
-    background-image: 🖐;
-    background-size: cover;
-    width: 300px;
+    background-color: #F2F7FA;
+    width: 200px;
     height: 200px;
     font-size: 2rem;;
+    border-style: none;
 }
+
+#rock {
+    border-style: none;
+    background-color: #F2F7FA;
+}
+
+#scissor {
+    border-style: none;
+    background-color: #F2F7FA;
+}
+
+button:hover {
+    transform: scale(1.2);
+}
+
+button:active {
+    background-color: #F2F7FA;
+    transform: translateY(1px);
+}
+
+#userNum {
+    font-size: 75px;
+    padding: 16px;
+}
+
+#opNum {
+    font-size: 75px;
+    padding: 16px;
+
+}
+
+#resultDisplay {
+    font-size: larger;
+    font-weight: bold;
+    padding: 16px;
+}
+
+
